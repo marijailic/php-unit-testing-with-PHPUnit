@@ -1,12 +1,13 @@
 <?php
 
+namespace sandbox;
+
 class Mailer
 {
     public function sendMessage($email, $message): bool
     {
-        if(empty($email))
-        {
-            throw new Exception;
+        if (empty($email)) {
+            throw new \Exception;
         }
 
         sleep(3);

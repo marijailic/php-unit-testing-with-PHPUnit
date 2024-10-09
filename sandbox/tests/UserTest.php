@@ -1,6 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use sandbox\User;
+use sandbox\Mailer;
 
 class UserTest extends TestCase
 {
@@ -49,7 +51,7 @@ class UserTest extends TestCase
 
         $user->setMailer($mockMailer);
 
-        $this->expectException(Exception::class);
+        $this->expectException(\Exception::class);
 
         $user->notify('Hello');
     }

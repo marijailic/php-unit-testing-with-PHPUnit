@@ -1,6 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use sandbox\Queue;
+use sandbox\QueueException;
 
 class QueueTest extends TestCase
 {
@@ -18,7 +20,7 @@ class QueueTest extends TestCase
 
 //    public static function setUpBeforeClass(): void
 //    {
-//        static::$queue = new Queue();
+//        static::$queue = new src\Queue();
 //    }
 //
 //    public static function tearDownAfterClass(): void
@@ -70,7 +72,7 @@ class QueueTest extends TestCase
     public function testExceptionThrownWhenAddingAnItemToAFullQueue(Queue $queue)
     {
         $this->expectException(QueueException::class);
-        $this->expectExceptionMessage("Queue is full");
+        $this->expectExceptionMessage("src\Queue is full");
         $queue->push('wafer thin mint');
     }
 }

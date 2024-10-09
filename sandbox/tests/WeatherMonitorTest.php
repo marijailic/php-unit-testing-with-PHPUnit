@@ -1,6 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use sandbox\TemperatureService;
+use sandbox\WeatherMonitor;
 
 class WeatherMonitorTest extends TestCase
 {

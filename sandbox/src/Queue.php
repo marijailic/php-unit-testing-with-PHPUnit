@@ -1,5 +1,7 @@
 <?php
 
+namespace sandbox;
+
 class Queue
 {
     public const MAX_ITEMS = 5;
@@ -8,7 +10,7 @@ class Queue
     public function push($item): void
     {
         if ($this->getCount() == static::MAX_ITEMS) {
-            throw new QueueException("Queue is full");
+            throw new QueueException("src\Queue is full");
         }
 
         $this->items[] = $item;

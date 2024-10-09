@@ -1,6 +1,8 @@
 <?php
 
-class OrderSpies
+namespace sandbox;
+
+class OrderTwo
 {
     public $quantity;
     public $unitPrice;

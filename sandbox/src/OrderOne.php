@@ -1,6 +1,8 @@
 <?php
 
-class Order
+namespace sandbox;
+
+class OrderOne
 {
     public $amount = 0;
     protected $gateway;

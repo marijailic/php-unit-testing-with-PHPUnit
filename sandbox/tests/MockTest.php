@@ -1,6 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use sandbox\Mailer;
 
 class MockTest extends TestCase
 {

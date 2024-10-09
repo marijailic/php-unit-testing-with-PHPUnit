@@ -1,44 +1,46 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use sandbox\OrderOne;
 
-class OrderTest extends TestCase
+class OrderOneTest extends TestCase
 {
     public function tearDown(): void
     {
         Mockery::close();
     }
 
-    // TODO: lesson 24
+    // not possible?
+    // https://github.com/sebastianbergmann/phpunit/issues/3985
     public function testOrderIsProcessed()
     {
-        $gateway = $this->getMockBuilder('PaymentGateway')
+//        $gateway = $this->getMockBuilder('PaymentGateway')
 //            ->onlyMethods(['charge'])
-            ->disableOriginalConstructor()
-            ->getMock();
+//            ->disableOriginalConstructor()
+//            ->getMock();
 
 //        $gateway->expects($this->once())
 //            ->method('charge')
 //            ->with($this->equalTo(200))
 //            ->willReturn(true);
 
-        $order = new Order($gateway);
+//        $order = new OrderOne($gateway);
 
-        $order->amount = 200;
+//        $order->amount = 200;
 
 //        $this->assertTrue($order->process());
     }
 
     public function testOrderIsProcessedUsingMockery()
     {
-        $gateway = Mockery::mock('PaymentGateway');
+        $gateway = Mockery::mock('sandbox\PaymentGateway');
 
         $gateway->shouldReceive('charge')
             ->once()
             ->with(200)
             ->andReturn(true);
 
-        $order = new Order($gateway);
+        $order = new OrderOne($gateway);
 
         $order->amount = 200;
 

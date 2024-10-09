@@ -1,5 +1,7 @@
 <?php
 
+namespace sandbox;
+
 class WeatherMonitor
 {
     protected $service;

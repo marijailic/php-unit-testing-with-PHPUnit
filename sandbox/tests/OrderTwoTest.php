@@ -1,8 +1,9 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use sandbox\OrderTwo;
 
-class OrderSpiesTest extends TestCase
+class OrderTwoTest extends TestCase
 {
     public function tearDown(): void
     {
@@ -11,11 +12,11 @@ class OrderSpiesTest extends TestCase
 
     public function testOrderIsProcessedUsingMock()
     {
-        $order = new OrderSpies(3, 1.99);
+        $order = new OrderTwo(3, 1.99);
 
         $this->assertEquals(5.97, $order->amount);
 
-        $gatewayMock = Mockery::mock('PaymentGateway');
+        $gatewayMock = Mockery::mock('sandbox\PaymentGateway');
         $gatewayMock->shouldReceive('charge')->once()->with(5.97);
 
         $order->process($gatewayMock);
@@ -23,11 +24,11 @@ class OrderSpiesTest extends TestCase
 
     public function testOrderIsProcessedUsingSpy()
     {
-        $order = new OrderSpies(3, 1.99);
+        $order = new OrderTwo(3, 1.99);
 
         $this->assertEquals(5.97, $order->amount);
 
-        $gatewaySpy = Mockery::spy('PaymentGateway');
+        $gatewaySpy = Mockery::spy('sandbox\PaymentGateway');
 
         $order->process($gatewaySpy);
 
