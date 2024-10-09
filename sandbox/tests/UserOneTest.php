@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 use sandbox\UserOne;
 use sandbox\MailerOne;
 
-class UserTest extends TestCase
+class UserOneTest extends TestCase
 {
     public function testReturnsFullName()
     {

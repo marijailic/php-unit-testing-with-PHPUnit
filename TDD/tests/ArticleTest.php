@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use TDDProject\App\Article;
+use TDD\App\Article;
 
 class ArticleTest extends TestCase
 {

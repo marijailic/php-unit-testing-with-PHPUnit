@@ -6,7 +6,7 @@
     "autoload": {
         "psr-4": {
             "sandbox\\": "sandbox/src/",
-            "TDDProject\\": "TDD-project/src/"
+            "TDD\\": "TDD/src/"
         }
     }
 }

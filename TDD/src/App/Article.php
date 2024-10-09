@@ -1,6 +1,6 @@
 <?php
 
-namespace TDDProject\App;
+namespace TDD\App;
 
 class Article
 {

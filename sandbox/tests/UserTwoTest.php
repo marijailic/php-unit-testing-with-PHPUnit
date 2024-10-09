@@ -2,7 +2,6 @@
 
 use PHPUnit\Framework\TestCase;
 use sandbox\UserTwo;
-use sandbox\MailerTwo;
 
 class UserTwoTest extends TestCase
 {

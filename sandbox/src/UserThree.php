@@ -13,6 +13,6 @@ class UserThree
 
     public function notify(string $message)
     {
-        return MailerTwo::send($this->email, $message);
+        return MailerThree::send($this->email, $message);
     }
 }

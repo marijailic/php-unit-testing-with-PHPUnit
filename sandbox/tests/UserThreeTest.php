@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use sandbox\UserThree;
-use sandbox\MailerTwo;
+use sandbox\MailerThree;
 
 class UserThreeTest extends TestCase
 {
@@ -15,7 +15,7 @@ class UserThreeTest extends TestCase
     {
         $user = new UserThree('dave@example.com');
 
-        $mock = Mockery::mock('alias:' . MailerTwo::class);
+        $mock = Mockery::mock('alias:' . MailerThree::class);
 
         $mock->shouldReceive('send')
             ->once()
