@@ -1,14 +1,14 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use sandbox\User;
-use sandbox\Mailer;
+use sandbox\UserOne;
+use sandbox\MailerOne;
 
 class UserTest extends TestCase
 {
     public function testReturnsFullName()
     {
-        $user = new User();
+        $user = new UserOne();
 
         $user->firstName = 'John';
         $user->lastName = 'Doe';
@@ -18,16 +18,16 @@ class UserTest extends TestCase
 
     public function testFullNameIsEmptyByDefault()
     {
-        $user = new User();
+        $user = new UserOne();
 
         $this->assertEquals('', $user->getFullName());
     }
 
     public function testNotificationIsSent()
     {
-        $user = new User();
+        $user = new UserOne();
 
-        $mockMailer = $this->createMock(Mailer::class);
+        $mockMailer = $this->createMock(MailerOne::class);
 
         $mockMailer->expects($this->once())
             ->method('sendMessage')
@@ -43,9 +43,9 @@ class UserTest extends TestCase
 
     public function testCannotNotifyUserWithNoEmail()
     {
-        $user = new User();
+        $user = new UserOne();
 
-        $mockMailer = $this->getMockBuilder(Mailer::class)
+        $mockMailer = $this->getMockBuilder(MailerOne::class)
             ->onlyMethods([])
             ->getMock();
 

@@ -2,7 +2,7 @@
 
 namespace sandbox;
 
-class Mailer
+class MailerOne
 {
     public function sendMessage($email, $message): bool
     {

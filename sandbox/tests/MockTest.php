@@ -1,13 +1,13 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use sandbox\Mailer;
+use sandbox\MailerOne;
 
 class MockTest extends TestCase
 {
     public function testMock()
     {
-        $mock = $this->createMock(Mailer::class);
+        $mock = $this->createMock(MailerOne::class);
 
         $mock->method('sendMessage')->willReturn(true);
 

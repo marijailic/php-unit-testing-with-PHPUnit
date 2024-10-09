@@ -2,14 +2,14 @@
 
 namespace sandbox;
 
-class User
+class UserOne
 {
     public $firstName;
     public $lastName;
     public $email;
     public $mailer;
 
-    public function setMailer(Mailer $mailer)
+    public function setMailer(MailerOne $mailer)
     {
         $this->mailer = $mailer;
     }
